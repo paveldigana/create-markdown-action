@@ -1,0 +1,12 @@
+name: 'Create markdown from directory content'
+description: 'Action creates markdown file from directory content'
+inputs:
+  inputDir:
+    description: Input directory for all files
+    required: true
+outputs:
+  outputDir: # id of output
+    description: Output directory for all emitted markdown files
+runs:
+  using: 'node16'
+  main: 'index.js'
