@@ -8,5 +8,7 @@ outputs:
   outputDir: # id of output
     description: Output directory for all emitted markdown files
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.inputDir }}
