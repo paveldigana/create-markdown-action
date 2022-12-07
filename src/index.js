@@ -19,7 +19,7 @@ try {
     // iterate over the files
     for (const file of files) {
         // get the file path
-        const filePath = path.join(imageDirectory, file);
+        const filePath = path.join('', file);
         console.log(file);
         // append the image to the markdown string
         markdown += `![image](${filePath})`;
@@ -27,9 +27,6 @@ try {
 
     // write the markdown string to a file
     fs.writeFileSync(   imageDirectory + '/README.md', markdown);
-
-
-
 
     const time = (new Date()).toTimeString();
     core.setOutput("outputDir", "dir/" + time);
