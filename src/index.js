@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
+const path = require('path');
 
 try {
     // `who-to-greet` input defined in action metadata file
@@ -8,7 +9,7 @@ try {
     console.log(`Hello ${inputDir}!`);
 
     const imageDirectory = '/github/workspace/' + inputDir
-    console.log(imageDirectory)
+
     // read the files in the directory
     const files = fs.readdirSync(imageDirectory);
 
