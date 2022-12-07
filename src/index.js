@@ -8,7 +8,7 @@ try {
     console.log(`Hello ${inputDir}!`);
 
     // read the files in the directory
-    const files = fs.readdirSync(inputDir);
+    const files = fs.readdirSync('/github/workspace/' + inputDir);
 
     // iterate over the files
     for (const file of files) {
