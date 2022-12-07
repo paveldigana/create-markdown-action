@@ -7,14 +7,25 @@ try {
     const inputDir = core.getInput('inputDir');
     console.log(`Hello ${inputDir}!`);
 
+    const imageDirectory = '/github/workspace/' + inputDir
     // read the files in the directory
-    const files = fs.readdirSync('/github/workspace/' + inputDir);
+    const files = fs.readdirSync(imageDirectory);
 
-    // iterate over the files
+    // create a markdown string
+    let markdown = '';
+
+// iterate over the files
     for (const file of files) {
-        // print the file name
+        // get the file path
+        const filePath = path.join(imageDirectory, file);
         console.log(file);
+        // append the image to the markdown string
+        markdown += `![image](${filePath})`;
     }
+
+    // write the markdown string to a file
+    fs.writeFileSync(imageDirectory + '/README.md', markdown);
+
 
 
 
