@@ -8,13 +8,14 @@ try {
     console.log(`Hello ${inputDir}!`);
 
     const imageDirectory = '/github/workspace/' + inputDir
+    console.log(imageDirectory)
     // read the files in the directory
     const files = fs.readdirSync(imageDirectory);
 
     // create a markdown string
     let markdown = '';
 
-// iterate over the files
+    // iterate over the files
     for (const file of files) {
         // get the file path
         const filePath = path.join(imageDirectory, file);
@@ -24,7 +25,7 @@ try {
     }
 
     // write the markdown string to a file
-    fs.writeFileSync(imageDirectory + '/README.md', markdown);
+    fs.writeFileSync(   imageDirectory + '/README.md', markdown);
 
 
 
